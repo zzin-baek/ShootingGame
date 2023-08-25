@@ -145,6 +145,8 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Bullets.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="GameNode.cpp" />
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="ImageManager.cpp" />
@@ -165,6 +167,8 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Bullets.h" />
     <ClInclude Include="CommonMacroFunction.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="GameNode.h" />
     <ClInclude Include="GImage.h" />
     <ClInclude Include="ImageManager.h" />

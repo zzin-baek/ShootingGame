@@ -62,7 +62,6 @@ public:
 
 
 
-
 	Animation(void);
 	~Animation() {}
 };
