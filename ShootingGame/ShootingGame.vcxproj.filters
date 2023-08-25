@@ -12,6 +12,9 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="ShootingGame.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Bullets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameNode.h" />
@@ -27,5 +30,8 @@
     <ClInclude Include="Timer.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="Utils.h" />
+    <ClInclude Include="ShootingGame.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Bullets.h" />
   </ItemGroup>
 </Project>

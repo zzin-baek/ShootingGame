@@ -89,10 +89,7 @@ HRESULT GImage::init(const char* fileName, int width, int height, bool isTrans, 
 
     int len = strlen(fileName);
 
-    _fileName = new char[len + 1]; // null 값을 포함하기 위해
-    // strcpy -> 인자 1개 더 추가
-    // ㄴ 고질적인 문자/문자열에서 사이즈 문제를 해결한 함수
-    // (복사받을 변수, 최대 길이, 원본)
+    _fileName = new char[len + 1]; 
     strcpy_s(_fileName, len + 1, fileName);
 
     _isTrans = isTrans;

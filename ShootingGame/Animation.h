@@ -42,7 +42,7 @@ public:
 	void AniResume(void);
 
 	//= 인라인 함수 ==
-	inline bool isPlat(void) { return _isPlay; }
+	inline bool isPlay(void) { return _isPlay; }
 	inline POINT getFramePos(void) { return _frameList[_playList[_nowPlayIdx]]; }
 
 	inline int getFrameIdx(void)

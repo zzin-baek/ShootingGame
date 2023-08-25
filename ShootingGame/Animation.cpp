@@ -13,6 +13,7 @@ _isPlay(false),
 _loop(false)
 {
 }
+
 HRESULT Animation::init(int totalW, int totalH, int frameW, int frameH)
 {
     //°¡·Î
