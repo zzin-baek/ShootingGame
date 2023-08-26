@@ -2,40 +2,107 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
-    <ClCompile Include="GameNode.cpp" />
     <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="Stdafx.cpp" />
-    <ClCompile Include="ImageManager.cpp" />
-    <ClCompile Include="GImage.cpp" />
-    <ClCompile Include="KeyManager.cpp" />
-    <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="TimeManager.cpp" />
-    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="ShootingGame.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Bullets.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyManager.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="GImage.cpp">
+      <Filter>2D FrameWork\GImage</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>2D FrameWork\Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Stdafx.cpp">
+      <Filter>2D FrameWork\PCH</Filter>
+    </ClCompile>
+    <ClCompile Include="GameNode.cpp">
+      <Filter>2D FrameWork\GameCore</Filter>
+    </ClCompile>
     <ClCompile Include="EnemyManager.cpp" />
+    <ClCompile Include="AirMonster.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameNode.h" />
     <ClInclude Include="MainGame.h" />
-    <ClInclude Include="Stdafx.h" />
-    <ClInclude Include="ImageManager.h" />
-    <ClInclude Include="GImage.h" />
-    <ClInclude Include="SingletonBase.h" />
-    <ClInclude Include="KeyManager.h" />
-    <ClInclude Include="RandomFunction.h" />
-    <ClInclude Include="CommonMacroFunction.h" />
-    <ClInclude Include="Animation.h" />
-    <ClInclude Include="Timer.h" />
-    <ClInclude Include="TimeManager.h" />
-    <ClInclude Include="Utils.h" />
     <ClInclude Include="ShootingGame.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Bullets.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="SingletonBase.h">
+      <Filter>2D FrameWork\DesignPattern</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyManager.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="GImage.h">
+      <Filter>2D FrameWork\GImage</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonMacroFunction.h">
+      <Filter>2D FrameWork\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomFunction.h">
+      <Filter>2D FrameWork\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>2D FrameWork\Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Stdafx.h">
+      <Filter>2D FrameWork\PCH</Filter>
+    </ClInclude>
+    <ClInclude Include="GameNode.h">
+      <Filter>2D FrameWork\GameCore</Filter>
+    </ClInclude>
     <ClInclude Include="EnemyManager.h" />
+    <ClInclude Include="AirMonster.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="2D FrameWork">
+      <UniqueIdentifier>{f44c5d5a-585b-41e4-ae92-3d6a8e0cdc1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D FrameWork\DesignPattern">
+      <UniqueIdentifier>{7d905475-ac10-4f5d-ac76-9d00f3adc9b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D FrameWork\FrameworkManager">
+      <UniqueIdentifier>{7b2e8f18-8762-45c8-9865-6aeb21c2d37e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D FrameWork\GImage">
+      <UniqueIdentifier>{030ac99f-fcd2-4205-8378-af89104582a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D FrameWork\Function">
+      <UniqueIdentifier>{413a7cac-6f8d-42de-b553-aae617b3e6fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D FrameWork\PCH">
+      <UniqueIdentifier>{c01186ee-8d51-4ebe-b7af-77eac22f1f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2D FrameWork\GameCore">
+      <UniqueIdentifier>{f290b6a0-047e-4de5-9645-11794e8b7c1e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

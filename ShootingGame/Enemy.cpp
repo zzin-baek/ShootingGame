@@ -53,10 +53,6 @@ void Enemy::render(void)
     animation();
 }
 
-void Enemy::setPattern(int type)
-{
-}
-
 void Enemy::setInfo(tagEnemy enemy)
 {
 }
@@ -100,5 +96,4 @@ bool Enemy::bulletCountFire(void)
         return true;
     }
     return false;
-
 }

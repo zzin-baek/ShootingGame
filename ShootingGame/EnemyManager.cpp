@@ -1,5 +1,6 @@
 #include "Stdafx.h"
 #include "EnemyManager.h"
+#include "Player.h"
 
 // cpp는 참조를 하고 넘어간다. 어디로? 해당되는 헤더 파일로
 // 해당하는 헤더 파일로 넘어가는 순간 헤더파일과 cpp를 복사한다.
@@ -7,36 +8,36 @@
 
 HRESULT EnemyManager::init(void)
 {
-    IMAGEMANAGER->addFrameImage("해파리", "Resources/Images/Object/JellyFish.bmp",
-        0.0f, 0.0f, 1140, 47, 19, 1, true, RGB(255, 0, 255));
+    IMAGEMANAGER->addFrameImage("AirMonster", "Resources/Image/Enemy/air_Monster3.bmp",
+        0.0f, 0.0f, 512, 32, 16, 1, true, RGB(255, 0, 255));
 
-    IMAGEMANAGER->addImage("적 미사일", "Resources/Images/Object/Bullet.bmp",
-        7 * 2, 7 * 2, true, RGB(255, 0, 255));
+    IMAGEMANAGER->addFrameImage("BasicBullet", "Resources/Image/Enemy/MBasic_Bullet.bmp",
+        64, 10, 8, 1, true, RGB(255, 0, 255));
 
     _setTime = RND->getFromFloatTo(50, 120);
     _worldTime = GetTickCount();
 
     setMinion();
     _bullet = new Bullet;
-    _bullet->init("적 미사일", 20);
+    _bullet->init("BasicBullet", 200);
 
     return S_OK;
 }
 
 void EnemyManager::release(void)
 {
-    for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
+    for (_viMonster = _vMonster.begin(); _viMonster != _vMonster.end(); ++_viMonster)
     {
-        (*_viMinion)->release();
-        SAFE_DELETE(*_viMinion);
+        (*_viMonster)->release();
+        SAFE_DELETE(*_viMonster);
     }
 }
 
 void EnemyManager::update(void)
 {
-    for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
+    for (_viMonster = _vMonster.begin(); _viMonster != _vMonster.end(); ++_viMonster)
     {
-        (*_viMinion)->update();
+        (*_viMonster)->update();
     }
 
     minionBulletFire();
@@ -46,9 +47,9 @@ void EnemyManager::update(void)
 
 void EnemyManager::render(void)
 {
-    for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
+    for (_viMonster = _vMonster.begin(); _viMonster != _vMonster.end(); ++_viMonster)
     {
-        (*_viMinion)->render();
+        (*_viMonster)->render();
     }
     _bullet->render();
 }
@@ -59,34 +60,35 @@ void EnemyManager::setMinion()
     {
         for (int j = 0; j < 5; j++)
         {
-            Enemy01* jellyFish;
-            jellyFish = new Minion;
-            jellyFish->init("해파리", 0, (float)(250 + j * 200), (float)(250 + i * 100));
-            jellyFish->setInfo({ 0, { (float)250 + j * 200, (float)250 + i * 100 } });
-            _vMinion.push_back(jellyFish);
+            Enemy* air;
+            air = new AirMonster;
+            air->init("AirMonster", 0, (float)(250 + j * 200), (float)(250 + i * 100));
+            air->setInfo({ 0, { (float)250 + j * 200, (float)250 + i * 100 } });
+            
+            _vMonster.push_back(air);
         }
     }
 }
 
 void EnemyManager::removeMinion(int arrNum)
 {
-    SAFE_DELETE(_vMinion[arrNum]);
-    _vMinion.erase(_vMinion.begin() + arrNum);
+    SAFE_DELETE(_vMonster[arrNum]);
+    _vMonster.erase(_vMonster.begin() + arrNum);
 }
 
 void EnemyManager::minionBulletFire(void)
 {
-    for (_viMinion = _vMinion.begin(); _viMinion != _vMinion.end(); ++_viMinion)
+    for (_viMonster = _vMonster.begin(); _viMonster != _vMonster.end(); ++_viMonster)
     {
-        if ((*_viMinion)->bulletCountFire())
+        if ((*_viMonster)->bulletCountFire())
         {
-            RECT rc = (*_viMinion)->getRect();
+            RECT rc = (*_viMonster)->getRect();
 
             _bullet->fire(rc.left + (rc.left - rc.right) / 2,
                 rc.bottom + (rc.bottom - rc.top) / 2 + 30,
                 MY_UTIL::getAngle(rc.left + (rc.right - rc.left) / 2,
-                    rc.bottom + (rc.top - rc.bottom) / 2, _rocket->getPosition().x,
-                    _rocket->getPosition().y), RND->getFromFloatTo(2.0f, 4.0f));
+                    rc.bottom + (rc.top - rc.bottom) / 2, _player->getPosition().x,
+                    _player ->getPosition().y), RND->getFromFloatTo(2.0f, 4.0f));
         }
     }
 }
@@ -97,7 +99,7 @@ void EnemyManager::collision(void)
     {
         RECT rc;
 
-        if (IntersectRect(&rc, &_bullet->getBullet()[i].rc, &_rocket->getRect()))
+        if (IntersectRect(&rc, &_bullet->getBullet()[i].rc, &_player->getRect()))
         {
             _bullet->removeBullet(i);
         }

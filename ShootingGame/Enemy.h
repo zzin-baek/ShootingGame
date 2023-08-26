@@ -39,7 +39,6 @@ public:
 	virtual void update(void);
 	virtual void render(void);
 
-	virtual void setPattern(int type);
 	virtual void setInfo(tagEnemy enemy);
 	virtual void move(void);
 	virtual RECT location(void);

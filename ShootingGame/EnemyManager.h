@@ -1,9 +1,10 @@
 #pragma once
 #include "GameNode.h"
 #include "Enemy.h"
+#include "AirMonster.h"
 #include "Bullets.h"
 
-class Rocket;
+class Player;
 
 class EnemyManager : public GameNode
 {
@@ -14,8 +15,10 @@ private:
 	float _setTime, _worldTime;
 
 private:
-	vEnemy _vMinion;
-	viEnemy _viMinion;
+	vEnemy _vMonster;
+	viEnemy _viMonster;
+
+	Player* _player;
 	Bullet* _bullet;
 
 public:
@@ -30,9 +33,9 @@ public:
 	void minionBulletFire(void);
 	void collision(void);
 
-	vector<Enemy*> getMinions(void) { return _vMinion; }
+	vector<Enemy*> getMinions(void) { return _vMonster; }
 	Bullet* getBullet(void) { return _bullet; }
-	void setRocketMemoryAddress(Rocket* rk) { _rocket = rk; }
+	void setRocketMemoryAddress(Player* pl) { _player = pl; }
 
 	EnemyManager();
 	~EnemyManager();
