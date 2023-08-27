@@ -2,6 +2,7 @@
 #include "GameNode.h"
 #include "Player.h"
 #include "EnemyManager.h"
+#include "Boss.h"
 
 class ShootingGame : public GameNode
 {
@@ -10,7 +11,11 @@ private:
 	Player* _f22;
 	EnemyManager* _em;
 
+	vector<Boss*> _vBoss;
+	vector<Boss*>::iterator _viBoss;
+
 	POINTF _bgSpeed;
+	bool _once;
 
 public:
 	HRESULT init(void);

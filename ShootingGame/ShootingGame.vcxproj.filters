@@ -36,6 +36,13 @@
     </ClCompile>
     <ClCompile Include="EnemyManager.cpp" />
     <ClCompile Include="AirMonster.cpp" />
+    <ClCompile Include="StartScene.cpp" />
+    <ClCompile Include="SelectPlayer.cpp" />
+    <ClCompile Include="FallMonster.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="Effect.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="TempSoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainGame.h" />
@@ -81,6 +88,13 @@
     </ClInclude>
     <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="AirMonster.h" />
+    <ClInclude Include="StartScene.h" />
+    <ClInclude Include="SelectPlayer.h" />
+    <ClInclude Include="FallMonster.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="Effect.h" />
+    <ClInclude Include="ProgressBar.h" />
+    <ClInclude Include="TempSoundManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="2D FrameWork">

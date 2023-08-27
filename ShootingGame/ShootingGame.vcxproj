@@ -145,20 +145,27 @@
   <ItemGroup>
     <ClCompile Include="AirMonster.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullets.cpp" />
+    <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
+    <ClCompile Include="FallMonster.cpp" />
     <ClCompile Include="GameNode.cpp" />
     <ClCompile Include="GImage.cpp" />
     <ClCompile Include="ImageManager.cpp" />
     <ClCompile Include="KeyManager.cpp" />
     <ClCompile Include="MainGame.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="ProgressBar.cpp" />
+    <ClCompile Include="SelectPlayer.cpp" />
     <ClCompile Include="ShootingGame.cpp" />
+    <ClCompile Include="StartScene.cpp" />
     <ClCompile Include="Stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Use</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TempSoundManager.cpp" />
     <ClCompile Include="TimeManager.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -167,20 +174,27 @@
   <ItemGroup>
     <ClInclude Include="AirMonster.h" />
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullets.h" />
     <ClInclude Include="CommonMacroFunction.h" />
+    <ClInclude Include="Effect.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyManager.h" />
+    <ClInclude Include="FallMonster.h" />
     <ClInclude Include="GameNode.h" />
     <ClInclude Include="GImage.h" />
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="KeyManager.h" />
     <ClInclude Include="MainGame.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ProgressBar.h" />
     <ClInclude Include="RandomFunction.h" />
+    <ClInclude Include="SelectPlayer.h" />
     <ClInclude Include="ShootingGame.h" />
     <ClInclude Include="SingletonBase.h" />
+    <ClInclude Include="StartScene.h" />
     <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="TempSoundManager.h" />
     <ClInclude Include="TimeManager.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Utils.h" />

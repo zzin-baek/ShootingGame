@@ -42,16 +42,17 @@ using std::vector;
 #include "RandomFunction.h"
 #include "KeyManager.h"
 #include "ImageManager.h"
-//#include "SoundManager.h"
+#include "TempSoundManager.h"
 #include "Utils.h"
 #include "TimeManager.h"
 
 //using namespace MY_UTILS;
 // # ΩÃ±€≈Ê #
-#define RND RandomFunction::getSingleton()
-#define KEYMANAGER KeyManager::getSingleton()
-#define IMAGEMANAGER ImageManager::getSingleton()
-#define TIMEMANAGER TimeManager::getSingleton()
+#define RND				RandomFunction::getSingleton()
+#define KEYMANAGER		KeyManager::getSingleton()
+#define IMAGEMANAGER	ImageManager::getSingleton()
+#define TIMEMANAGER		TimeManager::getSingleton()
+#define SOUNDMANAGER	TempSoundManager::getSingleton()
 
 #define WINSTART_X		400
 #define WINSTART_Y		100

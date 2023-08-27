@@ -5,6 +5,7 @@ class AirMonster : public Enemy
 {
 private:
 	float _breakTime, _angle;
+	float _enemyTime, _airMonsterCount;
 
 public:
 	void release(void);
@@ -17,5 +18,7 @@ public:
 	void draw(void);
 	void animation(void);
 
+	AirMonster();
+	~AirMonster() {}
 };
 

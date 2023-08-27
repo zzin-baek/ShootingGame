@@ -24,7 +24,7 @@ HRESULT Enemy::init(void)
 HRESULT Enemy::init(const char* imageName, int pattern, float x, float y)
 {
     _worldTimeCount = GetTickCount();
-    _rndTimeCount = RND->getFromFloatTo(50, 150);
+    _rndTimeCount = RND->getFromFloatTo(0.3, 0.8);
     _patternNum = pattern;
 
     _x = x;

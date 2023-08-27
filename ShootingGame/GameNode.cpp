@@ -24,7 +24,7 @@ HRESULT GameNode::init(bool managerInit)
         RND->init();
         KEYMANAGER->init();
         IMAGEMANAGER->init();
-        //TEMPSOUNDMANAGER->init();
+        SOUNDMANAGER->init();
         TIMEMANAGER->init();
     }
 
@@ -40,7 +40,7 @@ void GameNode::release(void)
         KEYMANAGER->releaseSingleton();
         IMAGEMANAGER->release();
         IMAGEMANAGER->releaseSingleton();
-        //TEMPSOUNDMANAGER->releaseSington();
+        SOUNDMANAGER->releaseSingleton();
         TIMEMANAGER->releaseSingleton();
     }
 

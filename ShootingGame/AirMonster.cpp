@@ -7,10 +7,13 @@ void AirMonster::release(void)
 
 void AirMonster::update(void)
 {
+    move();
 }
 
 void AirMonster::render(void)
 {
+    draw();
+    animation();
 }
 
 void AirMonster::setInfo(tagEnemy enemy)
@@ -54,6 +57,20 @@ void AirMonster::move(void)
         }
 
         break;
+    case 1:
+        if (0.006 + _enemyTime <= TIMEMANAGER->getWolrdTime())
+        {
+            _enemyTime = TIMEMANAGER->getWolrdTime();
+            _sEnemy.angle -= 3;
+            _sEnemy.center.x += 5 * cosf(_sEnemy.angle * PI / 180);
+            _sEnemy.center.y -= 5 * sinf(_sEnemy.angle * PI / 180);
+        }
+        _rc = RectMakeCenter(_sEnemy.center.x, _sEnemy.center.y, _image->getFrameWidth(), _image->getFrameHeight());
+
+        _x = (_rc.left + _rc.right) / 2;
+        _y = (_rc.top + _rc.bottom) / 2;
+
+        break;
     }
 }
 
@@ -64,15 +81,17 @@ RECT AirMonster::location(void)
 
 void AirMonster::draw(void)
 {
-	_image->frameRender(getMemDC(), _rc.left, _rc.top,
+	_image->frameRender(getMemDC(), _rc.left - _image->getFrameWidth() / 2, 
+        _rc.top - _image->getFrameHeight() / 2, 
+        _image->getFrameWidth() * 2, _image->getFrameHeight() * 2,
 		_currentFrameX, _currentFrameY);
 }
 
 void AirMonster::animation(void)
 {
-    if (_rndTimeCount + _worldTimeCount <= GetTickCount())
+    if (0.12 + _airMonsterCount <= TIMEMANAGER->getWolrdTime())
     {
-        _worldTimeCount = GetTickCount();
+        _airMonsterCount = TIMEMANAGER->getWolrdTime();
         _currentFrameX++;
 
         if (_image->getMaxFrameX() < _currentFrameX)
@@ -80,4 +99,9 @@ void AirMonster::animation(void)
             _currentFrameX = 0;
         }
     }
+}
+
+AirMonster::AirMonster() : _enemyTime(0.0f),
+                           _airMonsterCount(0.0f)
+{
 }
