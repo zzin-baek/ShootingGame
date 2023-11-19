@@ -11,7 +11,7 @@ HRESULT Boss::init(void)
 
     _bulletAngle = _bossMonster = 0.0f;
     _patternTime = _delay = 0.0f;
-    _hp = 200;
+    _hp = 500;
     _rc = RectMakeCenter(0, 0, 10, 10);
 
     _effect = new Effect;
@@ -65,7 +65,10 @@ void Boss::update(void)
     }
     Pattern();
     _bulletSpin->update();
+    _bulletFall->update();
     _bulletAngle += 3.0f;
+
+    //collision();
 }
 
 void Boss::render(void)
@@ -75,6 +78,7 @@ void Boss::render(void)
         draw();
         animation();
         _bulletSpin->render();
+        _bulletFall->render();
     }
     _effect->render();
 }
@@ -128,18 +132,40 @@ void Boss::Pattern(void)
         break;
 
     case 1:
-        if (0.05 + _delay <= TIMEMANAGER->getWolrdTime())
+        if (0.1 + _delay <= TIMEMANAGER->getWolrdTime())
         {
             _delay = TIMEMANAGER->getWolrdTime();
             _bulletFall->fire((_rc.left + _rc.right) / 2,
                 (_rc.bottom + _rc.top) / 2, 0, 3.0f);
         }
-
         break;
-
     }
 }
 
 void Boss::collision(void)
 {
+    for (int i = 0; i < _bulletSpin->getBullet().size(); i++)
+    {
+        RECT rc;
+
+        if (IntersectRect(&rc, &_bulletSpin->getBullet()[i].rc,
+            &CollisionAreaResizing(_player->getRect(), 40, 60)))
+        {
+            _bulletSpin->removeBullet(i);
+            _player->hitDamage(5.0f);
+        }
+
+    }
+    for (int i = 0; i < _bulletFall->getBullet().size(); i++)
+    {
+        RECT rc;
+
+        if (IntersectRect(&rc, &_bulletFall->getBullet()[i].rc,
+            &CollisionAreaResizing(_player->getRect(), 40, 60)))
+        {
+            _bulletFall->removeBullet(i);
+            _player->hitDamage(5.0f);
+        }
+
+    }
 }

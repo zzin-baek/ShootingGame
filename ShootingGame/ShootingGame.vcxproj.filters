@@ -3,10 +3,6 @@
   <ItemGroup>
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="ShootingGame.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Bullets.cpp" />
-    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="ImageManager.cpp">
       <Filter>2D FrameWork\FrameworkManager</Filter>
     </ClCompile>
@@ -34,22 +30,48 @@
     <ClCompile Include="GameNode.cpp">
       <Filter>2D FrameWork\GameCore</Filter>
     </ClCompile>
-    <ClCompile Include="EnemyManager.cpp" />
-    <ClCompile Include="AirMonster.cpp" />
-    <ClCompile Include="StartScene.cpp" />
-    <ClCompile Include="SelectPlayer.cpp" />
-    <ClCompile Include="FallMonster.cpp" />
-    <ClCompile Include="Boss.cpp" />
-    <ClCompile Include="Effect.cpp" />
-    <ClCompile Include="ProgressBar.cpp" />
-    <ClCompile Include="TempSoundManager.cpp" />
+    <ClCompile Include="EnemyManager.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>Enemy\Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="TempSoundManager.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectPlayer.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Effect.cpp">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgressBar.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootingGame.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullets.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="AirMonster.cpp">
+      <Filter>Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="FallMonster.cpp">
+      <Filter>Enemy\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Enemy\Monster</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainGame.h" />
-    <ClInclude Include="ShootingGame.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Bullets.h" />
-    <ClInclude Include="Enemy.h" />
     <ClInclude Include="SingletonBase.h">
       <Filter>2D FrameWork\DesignPattern</Filter>
     </ClInclude>
@@ -86,15 +108,45 @@
     <ClInclude Include="GameNode.h">
       <Filter>2D FrameWork\GameCore</Filter>
     </ClInclude>
-    <ClInclude Include="EnemyManager.h" />
-    <ClInclude Include="AirMonster.h" />
-    <ClInclude Include="StartScene.h" />
-    <ClInclude Include="SelectPlayer.h" />
-    <ClInclude Include="FallMonster.h" />
-    <ClInclude Include="Boss.h" />
-    <ClInclude Include="Effect.h" />
-    <ClInclude Include="ProgressBar.h" />
-    <ClInclude Include="TempSoundManager.h" />
+    <ClInclude Include="EnemyManager.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>Enemy\Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="TempSoundManager.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="StartScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectPlayer.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Effect.h">
+      <Filter>2D FrameWork\FrameworkManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgressBar.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingGame.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullets.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="AirMonster.h">
+      <Filter>Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="FallMonster.h">
+      <Filter>Enemy\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Enemy\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="2D FrameWork">
@@ -117,6 +169,21 @@
     </Filter>
     <Filter Include="2D FrameWork\GameCore">
       <UniqueIdentifier>{f290b6a0-047e-4de5-9645-11794e8b7c1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy">
+      <UniqueIdentifier>{7ce09b5b-4df5-451e-809d-0f9e0288effb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy\Boss">
+      <UniqueIdentifier>{34579b4f-e6d8-4b7a-a4fd-d26e5247059c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{5f7d5c8f-2745-4918-8a73-ad02718e99f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{8cedd7ad-5f62-4251-baf8-1882aa0e2e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Enemy\Monster">
+      <UniqueIdentifier>{3dc9a6b6-1b8f-47b5-876a-456c411432b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -12,6 +12,7 @@ enum eMonster
 {
 	AIR,
 	FALL,
+	MAX_ENEMY
 };
 
 class EnemyManager : public GameNode

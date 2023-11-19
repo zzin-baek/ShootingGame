@@ -170,7 +170,8 @@ void Bullet_air::move(void)
         if (_viBullet->img->getFrameX() > 7)
             _viBullet->img->setFrameX(0);
 
-        if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) > _range)
+        if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY,
+            _viBullet->x, _viBullet->y) > _range)
         {
             // SAFE_DELETE(_viBullet->img);
             _viBullet = _vBullet.erase(_viBullet);
@@ -261,7 +262,8 @@ void Bullet_fall::move(void)
         if (_viBullet->img->getFrameX() > 7)
             _viBullet->img->setFrameX(0);
 
-        if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) > _range)
+        if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY,
+            _viBullet->x, _viBullet->y) > _range)
         {
             // SAFE_DELETE(_viBullet->img);
             _viBullet = _vBullet.erase(_viBullet);
@@ -345,7 +347,8 @@ void Bullet_spin::move(void)
         if (_viBullet->img->getFrameX() > 7)
             _viBullet->img->setFrameX(0);
 
-        if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY, _viBullet->x, _viBullet->y) > _range)
+        if (MY_UTIL::getDistance(_viBullet->fireX, _viBullet->fireY,
+            _viBullet->x, _viBullet->y) > _range)
         {
             // SAFE_DELETE(_viBullet->img);
             _viBullet = _vBullet.erase(_viBullet);

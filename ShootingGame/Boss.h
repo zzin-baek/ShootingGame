@@ -35,6 +35,7 @@ public:
 	float getHp() { return _hp; }
 
 	void collision(void);
+	void setRocketMemoryAddress(Player* pl) { _player = pl; }
 
 	RECT getRect() { return _rc; }
 

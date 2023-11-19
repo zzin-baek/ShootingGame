@@ -40,6 +40,9 @@ void ShootingGame::update(void)
         boss->init();
         boss->init("Boss", WINSIZE_X / 2, -100);
 
+        _f22->setBossMemoryAddress(boss);
+        boss->setRocketMemoryAddress(_f22);
+
         _vBoss.push_back(boss);
     }
 

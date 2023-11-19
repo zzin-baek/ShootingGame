@@ -89,7 +89,8 @@ void EnemyManager::setMinion()
         {
             Enemy* air;
             air = new AirMonster;
-            air->init("AirMonster", 1, (float)(100 + i * 100), (float)(200));
+            air->init("AirMonster", RND->getFromIntTo(0, 1), 
+                (float)(100 + i * 100), (float)(200));
             air->setInfo({ 180, { (float)100 + i * 100, (float)200 } });
 
             _vMonster.push_back(air);

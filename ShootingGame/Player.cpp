@@ -103,8 +103,7 @@ void Player::render(void)
     
     for (int i = 0; i < 4; i++)
     {
-        IMAGEMANAGER->frameRender("Score", getMemDC(), 
-            150 - 40 * i, 10, (_scoreCopy % 10), 0);
+        IMAGEMANAGER->frameRender("Score", getMemDC(),             150 - 40 * i, 10, (_scoreCopy % 10), 0);
 
         _scoreCopy /= 10;
     }
@@ -146,6 +145,22 @@ void Player::collision(void)
             }
         }
     }
+    /*if (_boss)  
+    {
+        for (int i = 0; i < _bullet->getBullet().size(); i++)
+        {
+            RECT rc;
+            if (IntersectRect(&rc, &_bullet->getBullet()[i].rc,
+                &_boss->getRect()))
+            {
+                removeMissile(i);
+                _boss->hitDamage(10);
+                _effect->fire("Exp1", rc.left, rc.top);
+                upScore(10);
+                break;
+            }
+        }
+    }*/
 }
 
 void Player::removeMissile(int arrNum)
