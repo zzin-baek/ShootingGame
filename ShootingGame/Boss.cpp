@@ -68,7 +68,7 @@ void Boss::update(void)
     _bulletFall->update();
     _bulletAngle += 3.0f;
 
-    //collision();
+    collision();
 }
 
 void Boss::render(void)

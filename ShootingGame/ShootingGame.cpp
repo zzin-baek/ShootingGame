@@ -34,7 +34,7 @@ void ShootingGame::update(void)
 {
     _bgSpeed.y -= 2.5f;
 
-    if (TIMEMANAGER->getWolrdTime() > 35.0f && _vBoss.empty())
+    if (TIMEMANAGER->getWolrdTime() > 40.0f && _vBoss.empty())
     {
         Boss* boss = new Boss;
         boss->init();

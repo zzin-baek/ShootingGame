@@ -83,7 +83,7 @@ void EnemyManager::render(void)
 
 void EnemyManager::setMinion()
 {
-    if (TIMEMANAGER->getWolrdTime() > 24.0f && _vMonster.empty())
+    if (TIMEMANAGER->getWolrdTime() > 20.0f && _vMonster.empty())
     {
         for (int i = 0; i < 5; i++)
         {
